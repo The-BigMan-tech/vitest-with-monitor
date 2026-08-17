@@ -1,7 +1,7 @@
 {
     "name": "vitest-with-monitor",
     "version": "1.0.0",
-    "description": "Integrating fn-monitor with vitest to upgrade the codebase's test suite",
+    "description": "Integrating fn-monitor with vitest to upgrade a codebase's test suite",
     "license": "ISC",
     "type": "module",
     "scripts": {
