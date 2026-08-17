@@ -21,7 +21,7 @@ export function calculateTax(income: number): number {
     return tax;
 }
 
-//We export this to use in our test
+// We export this to use in our test
 export function triggerHighIncomeAudit(): void {
     console.log('High income audit triggered');
 }
