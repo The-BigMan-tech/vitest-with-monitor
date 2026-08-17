@@ -15,7 +15,7 @@ export function calculateTax(income: number): number {
         tax = baseTax + (income - lowThreshold) * averageRate;
     }else {
         tax = baseTax + midBracketTax + (income - highThreshold) * highRate;
-        triggerHighIncomeAudit();
+        // triggerHighIncomeAudit();
     }
 
     return tax;

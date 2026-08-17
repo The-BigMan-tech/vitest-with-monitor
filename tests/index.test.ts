@@ -15,7 +15,7 @@ test('triggers compliance audit for high income', () => {
 
     const monitoredCalculateTax = monitor({
         main: { 
-            ref: calculateTax,
+            ref: calculateTax,//the function that we want to monitor
             captures:{
                 triggerHighIncomeAudit
             }
@@ -26,7 +26,7 @@ test('triggers compliance audit for high income', () => {
                 const scope = event.scope;
 
                 if (callee.type !== "Identifier") return;
-                
+
                 const func = scope.variables.search(callee.name)
                 calls.add(func);
             });
