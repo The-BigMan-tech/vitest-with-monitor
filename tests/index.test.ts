@@ -32,9 +32,6 @@ test('triggers compliance audit for high income', () => {
             });
         }
     });
-
-    monitoredCalculateTax(10_000);
-
     // Output assertion
     expect(monitoredCalculateTax(10_000)).toBe(10_500);
     
