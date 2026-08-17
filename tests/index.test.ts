@@ -25,10 +25,10 @@ test('triggers compliance audit for high income', () => {
                 const callee = event.node.callee;
                 const scope = event.scope;
 
-                if (callee.type === 'Identifier') {
-                    const func = scope.variables.search(callee.name)
-                    calls.add(func);
-                }
+                if (callee.type !== "Identifier") return;
+                
+                const func = scope.variables.search(callee.name)
+                calls.add(func);
             });
         }
     });
