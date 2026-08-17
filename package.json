@@ -4,8 +4,13 @@
     "description": "Integrating fn-monitor with vitest to upgrade the codebase's test suite",
     "license": "ISC",
     "type": "module",
-    "main": "index.js",
     "scripts": {
-        "test": "npm run test"
+        "test": "vitest run"
+    },
+    "devDependencies": {
+        "vitest": "^4.1.10"
+    },
+    "dependencies": {
+        "@typescript-guy/fn-monitor": "^1.4.3"
     }
 }
