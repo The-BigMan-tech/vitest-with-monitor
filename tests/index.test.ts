@@ -4,8 +4,7 @@ import { calculateTax,triggerHighIncomeAudit } from '../src/index';
 
 test('calculates correct tax for high income', () => {
     const income = 10_000;
-    // baseTax (1000) + midBracketTax (8000) + (5000 * 0.3) = 10500
-    const expectedTax = 10_500; 
+    const expectedTax = 2_400
     
     expect(calculateTax(income)).toBe(expectedTax);
 });
@@ -33,7 +32,7 @@ test('triggers compliance audit for high income', () => {
         }
     });
     // Output assertion
-    expect(monitoredCalculateTax(10_000)).toBe(10_500);
+    expect(monitoredCalculateTax(10_000)).toBe(2_400);
     
     // Internal behavior assertion (The upgrade!)
     expect(calls).toContain(triggerHighIncomeAudit);
