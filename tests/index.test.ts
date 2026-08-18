@@ -1,6 +1,9 @@
 import { test, expect } from 'vitest';
+import { calculateTax } from '../src/index';
+
 import { monitor } from '@typescript-guy/fn-monitor';
-import { calculateTax,triggerHighIncomeAudit } from '../src/index';
+import { triggerHighIncomeAudit } from '../src/index';
+
 
 test('calculates correct tax for high income', () => {
     const income = 10_000;
