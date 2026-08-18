@@ -23,6 +23,6 @@ export function calculateTax(income: number): number {
     return tax;
 }
 
-export function triggerHighIncomeAudit(): void {
+function triggerHighIncomeAudit(): void {
     console.log('High income audit triggered');
 }

@@ -1,8 +1,6 @@
 import { test, expect } from 'vitest';
 import { calculateTax } from '../src/index';
-
 import { monitor } from '@typescript-guy/fn-monitor';
-import { triggerHighIncomeAudit } from '../src/index';
 
 
 test('calculates correct tax for high income', () => {
@@ -13,13 +11,14 @@ test('calculates correct tax for high income', () => {
 });
 
 test('triggers compliance audit for high income', () => {
-    const calls = new Set()
+    const calls = new Set();
+    const mockAudit = ()=>{};
 
     const monitoredCalculateTax = monitor({
         main: { 
             ref: calculateTax,//the function that we want to monitor
             captures:{
-                triggerHighIncomeAudit
+                triggerHighIncomeAudit:mockAudit
             }
         },
         inspector: (visit) => {
@@ -38,5 +37,5 @@ test('triggers compliance audit for high income', () => {
     expect(monitoredCalculateTax(10_000)).toBe(2_400);
     
     // Internal behavior assertion (The upgrade!)
-    expect(calls).toContain(triggerHighIncomeAudit);
+    expect(calls).toContain(mockAudit);
 });
