@@ -1,9 +1,11 @@
 export function calculateTax(income: number): number {
     const lowThreshold = 1_000;
     const highThreshold = 5_000;
+
     const lowRate = 0.1;
     const averageRate = 0.2;
     const highRate = 0.3;
+
     const baseTax = 1_000;
     const midBracketTax = 8_000;
 
@@ -11,9 +13,9 @@ export function calculateTax(income: number): number {
 
     if (income <= lowThreshold) {
         tax = income * lowRate;
-    }else if (income <= highThreshold) {
+    } else if (income <= highThreshold) {
         tax = baseTax + (income - lowThreshold) * averageRate;
-    }else {
+    } else {
         tax = baseTax + midBracketTax + (income - highThreshold) * highRate;
         // triggerHighIncomeAudit();
     }
