@@ -8,7 +8,7 @@
         "test": "vitest run"
     },
     "devDependencies": {
-        "@typescript-guy/fn-monitor": "^1.8.1",
+        "@typescript-guy/fn-monitor": "^1.9.0",
         "vitest": "^4.1.10"
     }
 }
