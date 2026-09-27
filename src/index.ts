@@ -6,7 +6,6 @@ export function calculateTax(income: number): number {
     const averageRate = 0.2;
     const highRate = 0.3;
     
-
     const baseTax = 100; 
     const midBracketTax = 800; 
 
